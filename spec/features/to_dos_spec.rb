@@ -1,5 +1,10 @@
+require "spec_helper"
+
 feature "ToDos" do
-  scenario "A user can sign in a create a ToDo" do
+
+  scenario "A user can sign in and create a ToDo" do
+
+    def register (username, password)
 
     visit "/"
 
@@ -9,6 +14,8 @@ feature "ToDos" do
     fill_in "Password", with: "pazzword"
 
     click_button "Register"
+
+    def sign_in (username, password)
 
     fill_in "Username", with: "hunta"
     fill_in "Password", with: "pazzword"
@@ -25,5 +32,11 @@ feature "ToDos" do
     within ".todos" do
       expect(page).to have_content "Get a haircut"
     end
+
+    end
+
   end
-end
+  
+    end
+  end
+
